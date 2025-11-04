@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ClassTrack</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+    <h1>ClassTrack - Student Attendance & Payment Tracker</h1>
+
+    <h3>Add Student</h3>
+    <form method="POST" action="/add_student">
+        <input name="name" placeholder="Name" class="form-control" required><br>
+        <input name="address" placeholder="Address" class="form-control"><br>
+        <input name="parent" placeholder="Parent Name" class="form-control"><br>
+        <input name="mobile" placeholder="Mobile Number" class="form-control"><br>
+        <input name="fee" placeholder="Monthly Fee" class="form-control"><br>
+        <button type="submit" class="btn btn-primary">Add Student</button>
+    </form>
+
+    <h3 class="mt-4">Schedule Class</h3>
+    <form method="POST" action="/schedule_class">
+        <input type="date" name="class_date" class="form-control" required><br>
+        <label>Select Students:</label><br>
+        {% for student in students %}
+            <input type="checkbox" name="class_students" value="{{ student.name }}"> {{ student.name }}
+            <select name="attendance_{{ student.name }}">
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select><br>
+        {% endfor %}
+        <button type="submit" class="btn btn-success">Schedule Class</button>
+    </form>
+
+    <h3 class="mt-4">Record Payment</h3>
+    <form method="POST" action="/record_payment">
+        <select name="student_name" class="form-control">
+            {% for student in students %}
+                <option value="{{ student.name }}">{{ student.name }}</option>
+            {% endfor %}
+        </select><br>
+        <input name="month" placeholder="Month (e.g., 2023-08)" class="form-control" required><br>
+        <button type="submit" class="btn btn-warning">Record Payment</button>
+    </form>
+
+    <a href="/summary" class="btn btn-info mt-4">View Summary</a>
+</body>
+</html>
