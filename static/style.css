@@ -1,1 +1,23 @@
-/* Custom styles for mobile-friendly tables and icons */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.icon-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.icon {
+    font-size: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 120px;
+    margin: 10px;
+    background-color: #f0f0f0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
