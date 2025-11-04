@@ -1,1 +1,17 @@
-<h2>Edit Class Page</h2>
+
+<!DOCTYPE html>
+<html>
+<head><title>Edit Class</title></head>
+<body>
+    <form method="POST">
+        Class Name: <input name="name" value="{{ class_item.name }}"><br>
+        Date: <input type="date" name="date" value="{{ class_item.date }}"><br>
+        Start Time: <select name="start">{% for h in range(0,24) %}<option {% if class_item.start == "%02d:00"|format(h) %}selected{% endif %}>{{ "%02d:00"|format(h) }}</option>{% endfor %}</select><br>
+        End Time: <select name="end">{% for h in range(0,24) %}<option {% if class_item.end == "%02d:00"|format(h) %}selected{% endif %}>{{ "%02d:00"|format(h) }}</option>{% endfor %}</select><br>
+        Status: <select name="status"><option {% if class_item.status == "Scheduled" %}selected{% endif %}>Scheduled</option><option {% if class_item.status == "Conducted" %}selected{% endif %}>Conducted</option><option {% if class_item.status == "Cancelled" %}selected{% endif %}>Cancelled</option></select><br>
+        Comments: <input name="comments" value="{{ class_item.comments }}"><br>
+        <button type="submit">Update Class</button>
+    </form>
+    <a href="/">Home</a>
+</body>
+</html>

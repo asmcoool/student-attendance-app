@@ -1,23 +1,30 @@
+
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-}
-.icon-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-.icon {
-    font-size: 40px;
+    background-color: #f8f9fa;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 120px;
-    margin: 10px;
-    background-color: #f0f0f0;
 }
-a {
+.icon-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.icon-card i {
+    font-size: 64px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+.icon-card h5 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+.icon-link {
     text-decoration: none;
-    color: black;
+    color: inherit;
+}
+.table {
+    font-size: 0.9rem;
 }

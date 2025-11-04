@@ -1,1 +1,26 @@
-<h2>Class Scheduling Page</h2>
+
+<!DOCTYPE html>
+<html>
+<head><title>Schedule Class</title></head>
+<body>
+    <form method="POST">
+        Class Name: <input name="name"><br>
+        Date: <input type="date" name="date"><br>
+        Start Time: <select name="start">{% for h in range(0,24) %}<option>{{ "%02d:00"|format(h) }}</option>{% endfor %}</select><br>
+        End Time: <select name="end">{% for h in range(0,24) %}<option>{{ "%02d:00"|format(h) }}</option>{% endfor %}</select><br>
+        Status: <select name="status"><option>Scheduled</option><option>Conducted</option><option>Cancelled</option></select><br>
+        Comments: <input name="comments"><br>
+        <button type="submit">Add Class</button>
+    </form>
+    <table border="1">
+        <tr><th>Name</th><th>Date</th><th>Start</th><th>End</th><th>Status</th><th>Comments</th><th>Actions</th></tr>
+        {% for c in classes %}
+        <tr>
+            <td>{{ c.name }}</td><td>{{ c.date }}</td><td>{{ c.start }}</td><td>{{ c.end }}</td><td>{{ c.status }}</td><td>{{ c.comments }}</td>
+            <td><a href="/edit_class/{{ c.id }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Home</a>
+</body>
+</html>

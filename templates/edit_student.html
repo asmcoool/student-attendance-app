@@ -1,1 +1,16 @@
-<h2>Edit Student Page</h2>
+
+<!DOCTYPE html>
+<html>
+<head><title>Edit Student</title></head>
+<body>
+    <form method="POST">
+        Name: <input name="name" value="{{ student.name }}"><br>
+        Address: <input name="address" value="{{ student.address }}"><br>
+        Parent: <input name="parent" value="{{ student.parent }}"><br>
+        Mobile: <input name="mobile" value="{{ student.mobile }}"><br>
+        Monthly Fee: <input name="fee" value="{{ student.fee }}"><br>
+        <button type="submit">Update Student</button>
+    </form>
+    <a href="/">Home</a>
+</body>
+</html>

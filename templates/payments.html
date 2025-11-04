@@ -1,1 +1,24 @@
-<h2>Payments Page</h2>
+
+<!DOCTYPE html>
+<html>
+<head><title>Payments</title></head>
+<body>
+    <form method="POST">
+        Student: <select name="student">{% for s in students %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}</select><br>
+        Date: <input type="date" name="date"><br>
+        Amount: <input name="amount"><br>
+        Currency: <input name="currency" value="USD"><br>
+        Status: <select name="status"><option>Paid</option><option>Pending</option></select><br>
+        <button type="submit">Add Payment</button>
+    </form>
+    <table border="1">
+        <tr><th>Student</th><th>Parent</th><th>Date</th><th>Amount</th><th>Currency</th><th>Status</th></tr>
+        {% for p in payments %}
+        <tr>
+            <td>{{ p.student }}</td><td>{{ p.parent }}</td><td>{{ p.date }}</td><td>{{ p.amount }}</td><td>{{ p.currency }}</td><td>{{ p.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Home</a>
+</body>
+</html>

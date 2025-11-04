@@ -1,1 +1,25 @@
-<h2>Student Management Page</h2>
+
+<!DOCTYPE html>
+<html>
+<head><title>Students</title></head>
+<body>
+    <form method="POST">
+        Name: <input name="name"><br>
+        Address: <input name="address"><br>
+        Parent: <input name="parent"><br>
+        Mobile: <input name="mobile"><br>
+        Monthly Fee: <input name="fee"><br>
+        <button type="submit">Add Student</button>
+    </form>
+    <table border="1">
+        <tr><th>Name</th><th>Parent</th><th>Mobile</th><th>Fee</th><th>Actions</th></tr>
+        {% for s in students %}
+        <tr>
+            <td>{{ s.name }}</td><td>{{ s.parent }}</td><td>{{ s.mobile }}</td><td>{{ s.fee }}</td>
+            <td><a href="/edit_student/{{ s.id }}">Edit</a> | <a href="/delete_student/{{ s.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Home</a>
+</body>
+</html>
