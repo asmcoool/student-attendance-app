@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Students</title></head>
+<body>
+    <h2>Add Student</h2>
+    <form method="post">
+        Name: <input name="name"><br>
+        Address: <input name="address"><br>
+        Parent Name: <input name="parent"><br>
+        Mobile: <input name="mobile"><br>
+        Monthly Fee: <input name="fee"><br>
+        <button type="submit">Add Student</button>
+    </form>
+    <h2>Student List</h2>
+    <ul>
+        {% for student in students %}
+        <li>{{ student.name }} - {{ student.mobile }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

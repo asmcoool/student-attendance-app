@@ -1,0 +1,14 @@
+
+Step-by-Step Deployment Guide (Using Render):
+
+1. Create a GitHub account at https://github.com and log in.
+2. Unzip the downloaded folder and upload all files to a new GitHub repository.
+3. Go to https://render.com and sign up using your GitHub account.
+4. Click "New" → "Web Service" → "Deploy from GitHub".
+5. Select your repository and fill in:
+   - Name: student-attendance-app
+   - Environment: Python
+   - Build Command: (leave blank)
+   - Start Command: gunicorn app:app
+6. Click "Create Web Service" and wait for deployment.
+7. Once deployed, you’ll get a public URL to access and share the app.

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Class Schedule</title></head>
+<body>
+    <h2>Schedule a Class</h2>
+    <form method="post">
+        Date: <input type="date" name="date"><br>
+        Status: <select name="status">
+            <option>Scheduled</option>
+            <option>Conducted</option>
+            <option>Cancelled</option>
+        </select><br>
+        Comments: <input name="comments"><br>
+        <button type="submit">Add Class</button>
+    </form>
+    <h2>Class History</h2>
+    <table border="1">
+        <tr><th>Class Name</th><th>Date</th><th>Status</th><th>Comments</th></tr>
+        {% for class in classes %}
+        <tr>
+            <td>{{ class.name }}</td>
+            <td>{{ class.date }}</td>
+            <td>{{ class.status }}</td>
+            <td>{{ class.comments }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

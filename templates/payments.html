@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Payments</title></head>
+<body>
+    <h2>Add Payment</h2>
+    <form method="post">
+        Student: 
+        <select name="student">
+            {% for student in students %}
+            <option value="{{ student.id }}">{{ student.name }}</option>
+            {% endfor %}
+        </select><br>
+        Date: <input type="date" name="date"><br>
+        Amount: <input name="amount"><br>
+        Currency: <input name="currency" value="USD"><br>
+        <button type="submit">Add Payment</button>
+    </form>
+    <h2>Payment History</h2>
+    <table border="1">
+        <tr><th>Student</th><th>Parent</th><th>Date</th><th>Amount</th><th>Currency</th></tr>
+        {% for payment in payments %}
+        <tr>
+            <td>{{ payment.student }}</td>
+            <td>{{ payment.parent }}</td>
+            <td>{{ payment.date }}</td>
+            <td>{{ payment.amount }}</td>
+            <td>{{ payment.currency }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
