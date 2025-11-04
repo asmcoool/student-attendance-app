@@ -2,37 +2,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Student Attendance App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { padding: 20px; }
+        .icon-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .icon-card i {
+            font-size: 64px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .icon-card h5 {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .icon-link {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
     <div class="container text-center">
         <h2 class="mb-4">Student Attendance App</h2>
         <div class="row">
-            <div class="col-6 icon-card">
-                <a href="/students" class="icon-link">
-                    <i class="fas fa-user-graduate"></i>
-                    <h5>Students</h5>
+            <div class="col-6">
+                <a href="{{ url_for('students') }}" class="icon-link">
+                    <div class="icon-card">
+                        <i class="fas fa-user-graduate"></i>
+                        <h5>Students</h5>
+                    </div>
                 </a>
             </div>
-            <div class="col-6 icon-card">
-                <a href="/schedule" class="icon-link">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h5>Class Schedule</h5>
+            <div class="col-6">
+                <a href="{{ url_for('schedule') }}" class="icon-link">
+                    <div class="icon-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h5>Class Schedule</h5>
+                    </div>
                 </a>
             </div>
-            <div class="col-6 icon-card">
-                <a href="/payments" class="icon-link">
-                    <i class="fas fa-money-check-alt"></i>
-                    <h5>Payments</h5>
+            <div class="col-6">
+                <a href="{{ url_for('payments') }}" class="icon-link">
+                    <div class="icon-card">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h5>Payments</h5>
+                    </div>
                 </a>
             </div>
-            <div class="col-6 icon-card">
-                <a href="/reports" class="icon-link">
-                    <i class="fas fa-chart-bar"></i>
-                    <h5>Reports</h5>
+            <div class="col-6">
+                <a href="{{ url_for('reports') }}" class="icon-link">
+                    <div class="icon-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <h5>Reports</h5>
+                    </div>
                 </a>
             </div>
         </div>
