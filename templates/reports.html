@@ -3,9 +3,12 @@
 <html>
 <head><title>Reports</title></head>
 <body>
+    <a href="/" style="float:right;">🏠 Home</a>
     <h2>Reports</h2>
-    <p>Total Students: {{ students|length }}</p>
-    <p>Total Classes Scheduled: {{ classes|length }}</p>
-    <p>Total Payments Recorded: {{ payments|length }}</p>
+    <p>Total Students: {{total_students}}</p>
+    <p>Total Classes: {{total_classes}}</p>
+    <p>Held Classes: {{held_classes}}</p>
+    <p>Cancelled Classes: {{cancelled_classes}}</p>
+    <p>Total Payments: {{total_payments}}</p>
 </body>
 </html>

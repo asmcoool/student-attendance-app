@@ -1,30 +1,28 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Payments</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="container mt-4">
-    <a href="/" class="btn btn-secondary float-end">🏠 Home</a>
+<head><title>Payments</title></head>
+<body>
+    <a href="/" style="float:right;">🏠 Home</a>
     <h2>Add Payment</h2>
     <form method="post">
-        <select name="student" class="form-control mb-2">
+        Student: <select name="student_id">
             {% for s in students %}
-            <option value="{{s.name}}">{{s.name}}</option>
+            <option value="{{s.id}}">{{s.name}}</option>
             {% endfor %}
-        </select>
-        <input name="parent" placeholder="Parent Name" class="form-control mb-2" required>
-        <input type="date" name="date" class="form-control mb-2" required>
-        <input name="amount" placeholder="Amount" class="form-control mb-2" required>
-        <input name="currency" value="USD" class="form-control mb-2">
-        <button type="submit" class="btn btn-warning">Add Payment</button>
+        </select><br>
+        Date: <input type="date" name="date"><br>
+        Amount: <input name="amount"><br>
+        Currency: <input name="currency" value="USD"><br>
+        <button type="submit">Add Payment</button>
     </form>
-    <h3 class="mt-4">Payment History</h3>
-    <table class="table table-bordered">
+    <h3>Payment History</h3>
+    <table border="1">
         <tr><th>Student</th><th>Parent</th><th>Date</th><th>Amount</th><th>Currency</th></tr>
         {% for p in payments %}
-        <tr><td>{{p.student}}</td><td>{{p.parent}}</td><td>{{p.date}}</td><td>{{p.amount}}</td><td>{{p.currency}}</td></tr>
+        <tr>
+            <td>{{p.student_name}}</td><td>{{p.parent}}</td><td>{{p.date}}</td><td>{{p.amount}}</td><td>{{p.currency}}</td>
+        </tr>
         {% endfor %}
     </table>
 </body>
